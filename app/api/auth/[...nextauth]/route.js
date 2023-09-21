@@ -9,7 +9,11 @@ export const authOptions = {
     }),
     // ...add more providers here
   ],
-  secret : process.env.NEXTAUTH_SECRET
+  pages: {
+    signIn: '/signin',
+    error: '/api/auth/error',
+  },
+  secret: process.env.NEXTAUTH_SECRET
 }
 const handler = NextAuth(authOptions)
 
